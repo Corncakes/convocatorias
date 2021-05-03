@@ -1,0 +1,19 @@
+owl-carousel-scripts:
+  version: 1.x
+  css:
+    component:
+      plugins/owlcarousel2/assets/owl.carousel.min.css: {}
+      plugins/owlcarousel2/assets/owl.theme.default.css: {}
+  js:
+    plugins/owlcarousel2/owl.carousel.min.js: {}
+
+  dependencies:
+   - core/jquery
+
+global:
+  version: VERSION
+  css:
+    base:
+      css/ipcc.css: {}
+  js:
+    js/ipcc.js: {}

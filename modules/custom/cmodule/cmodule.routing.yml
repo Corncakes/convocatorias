@@ -1,0 +1,39 @@
+cmodule.adjuntar:
+  path: '/convocatoria/adjuntar'
+  defaults:
+    _title: 'Adjuntar documentos para convocatoria'
+    _form: '\Drupal\cmodule\Form\AdjuntarForm'
+  requirements:
+    _permission: 'access content'
+
+cmodule.respuesta_inscripcion:
+  path: '/result'
+  defaults:
+    _controller: '\Drupal\cmodule\Controller\RespuestaInscripcionController::content'
+    _title: 'Respuesta inscripción convocatoria'
+  requirements:
+    _permission: 'access content'
+
+cmodule.admin_list:
+  path: '/admin-list'
+  defaults:
+    _controller: '\Drupal\cmodule\Controller\AdminInscripcionController::adminList'
+    _title: 'Lista de inscripciones'
+  requirements:
+    _permission: 'access content'
+
+cmodule.admin_detail:
+  path: '/admin-list/{cvid}'
+  defaults:
+    _controller: '\Drupal\cmodule\Controller\AdminInscripcionController::adminDetail'
+    _title: 'Detalle inscrito'
+  requirements:
+    _permission: 'access content'
+
+cmodule.user_inscripcion:
+  path: '/user/{uid}/inscripciones'
+  defaults:
+    _controller: '\Drupal\cmodule\Controller\UserInscripcionController::content'
+    _title: 'Inscripciones del usuario'
+  requirements:
+    _permission: 'access content'

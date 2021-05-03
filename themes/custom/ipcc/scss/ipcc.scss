@@ -1,0 +1,705 @@
+// =========
+// This file is a custom file that loads all files. Each non-base layer
+// can be disabled.
+//
+// Do not name this file "STARTER.scss". This file should be named
+// THEMENAME.scss.
+//
+// This application file (THEMENAME.scss) is where all the partials are
+// imported.
+//
+// Theme styles are categorized using SMACSS standards. They utilize
+// categorization of styles into various categories. Those categories are the
+// following:
+//
+// - Base: CSS reset/normalize plus HTML element styling.
+// - Layout: Macro arrangement of a web page, including any grid systems.
+// - Modules: Dictate minor layout modules or reusable elements.
+// - States: Describe the appearance of a module in various states.
+// - Theme: Specific customizations for your subtheme.
+// For more information about this new Drupal css file standard, please review
+// the following:
+// - https://drupal.org/node/1887922
+// - http://smacss.com/
+// =========
+
+// Make sure the charset is set appropriately
+@charset 'utf-8';
+
+// This is your _settings.scss file where you can override foundation variables.
+// http://foundation.zurb.com/sites/docs/sass.html#the-settings-file
+@import 'settings';
+
+// Core
+// The following imports bootstrap the theme.
+@import 'foundation';
+@import 'motion-ui';
+
+// Foundation Components / Partials
+// http://foundation.zurb.com/sites/docs/sass.html#adjusting-css-output
+//
+// Note: The following include statements import sass partials for corresponding
+// Foundation 6 features and components. If you do not need any of the features
+// listed below feel free to comment each line out and re-compile.
+//
+// We are using Foundation's Float Grid (Legacy) for layout as our default.
+// http://foundation.zurb.com/sites/docs/grid.html
+//
+// Why not use the new XY Grid? The XY Grid system is a major update that has new
+// markup requirements which would break other module integrations that currently
+// work with ZURB Foundation for Drupal. Because we don't like to introduce breaking
+// changes for websites we have elected to take this route for greater support.
+//
+// Note: This will likely change in future releases as the XY Grid becomes the
+// new standard.
+//
+// Still want to use the XY Grid? Uncomment the foundation-xy-grid-classes include
+// statement and recompile css.  You can now use the new XY Grid!
+//
+// http://foundation.zurb.com/sites/docs/xy-grid.html
+//
+// WARNING: Including the XY Grid and disabling Float Grid will require that base
+// theme provided template files be copied to your sub-theme and modified accordingly
+// to match XY Grid markup requirements.
+//
+@include foundation-global-styles;
+@include foundation-grid;
+//@include foundation-flex-grid;
+@include foundation-float-classes;
+//@include foundation-flex-classes;
+//@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+
+// Prototyping Utilities / Partials
+// http://foundation.zurb.com/sites/docs/prototyping-utilities.html
+//
+//@include foundation-prototype-typescale;
+//@include foundation-prototype-text-utilities;
+//@include foundation-prototype-text-transformation;
+//@include foundation-prototype-text-decoration;
+//@include foundation-prototype-font-styling;
+//@include foundation-prototype-list-style-type;
+//@include foundation-prototype-rounded;
+//@include foundation-prototype-bordered;
+//@include foundation-prototype-shadow;
+//@include foundation-prototype-arrow;
+//@include foundation-prototype-separator;
+//@include foundation-prototype-overflow;
+//@include foundation-prototype-display;
+//@include foundation-prototype-position;
+//@include foundation-prototype-border-box;
+//@include foundation-prototype-border-none;
+//@include foundation-prototype-sizing;
+//@include foundation-prototype-spacing;
+
+// Motion UI Components / Partials
+// http://foundation.zurb.com/sites/docs/motion-ui.html
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+// Our Custom Components / Partials
+//
+// Import our mixins early so they can be used by other partials.
+// Optional.
+//@import 'base/mixins';
+
+// Common file is where you place common utility classes to extend or
+// parametrics.
+// Optional.
+// @import 'base/common';
+
+// Drupal specific styles (to fix Drupalisms).
+@import 'base/drupal';
+
+// Styling for elements.
+// Optional.
+// @import 'base/elements';
+
+// Layout
+// Each section of the document has it's own partial seperated out to improve
+// developer experience. Additionally, grids can be declared in layouts as well.
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/aside';
+@import 'layout/footer';
+
+// Modules
+// @import 'modules/block';
+// @import 'modules/button';
+
+// States
+// @import 'states/collapse';
+
+// Themes
+// @import 'theme/button-light';
+
+// Older IE support
+// @import 'vendor/ie';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+//font-family: 'Noto Sans TC', sans-serif;
+//font-family: 'Poppins', sans-serif;
+
+// Colors
+$black-transparent: #0a0a0ae0;
+$dark-blue: #092e4e;
+
+#block-ipcc-local-tasks {
+    position: fixed;
+    background: $black-transparent;
+    border-radius: 10px;
+    bottom: 30px;
+    overflow: hidden;
+    padding: 0.4rem;
+    right: 30px;
+    z-index: 999999;
+
+    .tabs {
+      &> li {
+        margin-right: 0;
+      }
+    
+      &.primary {
+        margin: 0;
+
+        a {
+          color: $white;
+          padding: 10px 15px;
+
+          &:hover, &.is-active {
+            background: $dark-blue;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .button-group {
+      margin-bottom: 0;
+
+      .button {
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+    }
+}
+
+.off-canvas-content {
+    p, li, a, div, label {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #333;
+    }
+}
+
+.my-3 {
+	margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.my-4 {
+	margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.mx-3 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.py-3 {
+	padding: 3rem 0;
+}
+
+.px-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pr-2 {
+	padding-right: 2rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 2rem;
+  line-height: 1;
+}
+
+h2 {
+  color: #312d4b;
+  font-size: 2.8rem;
+}
+/*
+.callout {
+  position: fixed;
+  bottom: 15px;
+  left: 30px;
+  z-index: 9;
+  padding-right: 50px;
+  background-color: $black-transparent;
+  border: 0;
+  color: $white;
+  border-radius: 10px;
+}
+*/
+.clearfix {
+    clear: both;
+    overflow: hidden;
+}
+
+.header-container {
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.top-bar-container {
+    header {
+      padding: 1rem 0;
+      box-shadow: 0px 1px 5px 0 #00000024;
+      background: #ffffff;
+    }
+}
+
+.views-field-view-node {
+    a {
+        display: inline-block;
+        background: #4da54d;
+        border-radius: 8px;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 600;
+        padding: 0.6em 1.5em;
+        border: 1px solid transparent;
+        transition: background-color 0.25s ease-out,color 0.25s ease-out;
+        font-family: inherit;
+        font-size: 0.9rem;
+        -webkit-appearance: none;
+        line-height: 1;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.field-label {
+    font-size: 2rem;
+}
+
+.views-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+h2 {
+  &.block-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}
+
+.enlace {
+  display: flex;
+  justify-content: center;
+
+  a {
+    background: #1e3358;
+    border-radius: 8px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem !important;
+    padding: 0.85em 2em;
+    border: 1px solid #09395e;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.button.success {
+  background: #1e3358;
+  border-radius: 8px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem !important;
+  padding: 0.85em 2em;
+  border: 1px solid #09395e;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background: #1e3358;
+    border: 1px solid #09395e;
+  }
+}
+
+.dropdown {
+  &.menu {
+    &>li {
+      &>a {
+        text-transform: uppercase;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+#block-ipcc-account-menu {
+  .menu {
+    a {
+      background: #1e3358;
+      border-radius: 5px;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 600;
+      font-size: 0.7rem !important;
+      padding: 0.7em 1em;
+      border: 1px solid #09395e;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.main-title-container {
+  background: url('../images/bg-2.png') center center no-repeat;
+  background-size: cover;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+
+  h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 0;
+    
+    li {
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.footer-container {
+  background: #312d4b;
+  padding: 3rem 0;
+
+  footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .block-title {
+    font-size: 1rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #ffffff;
+  }
+
+  .menu {
+    flex-direction: column;
+
+    li {
+      a {
+        color: #ffffff;
+        padding: 0.3rem 1rem;
+        font-size: 0.9rem;
+        font-family: 'Noto Sans TC', sans-serif;
+      }
+    }
+  }
+
+  .column-block {
+    margin: 0;
+  }
+}
+
+#block-views-block-custom-blocks-block-3 {
+  h2.block-title {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem 0;
+  }
+}
+
+#block-views-block-custom-blocks-block-5 {
+  background: #084d88;
+  color: #fff;
+
+  .block-title {
+    color: #ffffff;
+  }
+
+  .views-field-title {
+    a {
+      color: #ffffff;
+    }
+  }
+  
+  .views-field-field-fecha * {
+    color: #ffffff;
+  }
+}
+
+.user-pages-img-container {
+  display: flex;
+
+  .user-pages-img {
+    background: url('../images/login-img.png') center center no-repeat;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .links-login {
+    text-align: center;
+
+    h3, h4, p {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    h3, h4 {
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      margin-bottom: 4rem;
+    }
+  }
+
+  #main {
+    background: #e9e9e9;
+    padding: 10rem 8rem;
+
+    h3, h4 {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #333333;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #block-pagetitle {
+      h1 {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 300;
+      }
+    }
+
+    #block-socialauthlogin {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .social-auth.auth-link {
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    #edit-actions {
+      text-align: center;
+        margin-top: 2rem;
+    }
+
+    #edit-pass--description {
+      display: none;
+    }
+
+    .password-confirm, label {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.8rem;
+      color: #555555;
+      font-weight: 300;
+    }
+
+    .password-confirm {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+select, [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.path-user {
+  #block-dayscript-local-tasks {
+    display: none;
+  }
+}
+
+#convocatorias {
+  .views-field-nothing {
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    .convocatoria-container {
+      position: relative;
+
+      .views-field-field-area {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background: #d1372db3;
+        padding: 0.2rem 0.8rem 0.2rem 0.6rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      .views-field-field-estado {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: #47780bb3;
+        padding: 0.2rem 0.8rem 0.2rem 0.6rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .views-field-field-categoria {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #1b4f84b3;
+        padding: 0.2rem 0.8rem 0.2rem 0.6rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      .views-field-field-subcategoria {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: #a98505b3;
+        padding: 0.2rem 0.8rem 0.2rem 0.6rem;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      .views-field-view-node a {
+        font-size: 0.6rem;
+      }
+
+      .views-field-title {
+        line-height: 1;
+        padding: 0.5rem 0;
+
+        a {
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          font-weight: 600;
+          font-family: 'Poppins', sans-serif ;
+        }
+      }
+    }
+  }
+}
+
+.views-exposed-form {
+  summary {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    outline: none;
+  }
+}
+
+#block-views-block-custom-blocks-block-3 {
+  margin-bottom: 3rem;
+}

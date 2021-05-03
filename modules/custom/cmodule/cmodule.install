@@ -1,0 +1,76 @@
+<?php
+
+function cmodule_schema() {
+  $schema['inscripciones'] = [
+    'description' => 'Stores module data.',
+    'fields' => [
+      'cvid' => [
+        'description' => 'The primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'The {users}.uid field.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'nid' => [
+        'description' => 'The {node}.nid field.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'created' => [
+        'description' => 'The timestamp for when registry was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ltid' => [
+        'description' => 'The line taxonomy id field.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ]
+    ],
+    'primary key' => [
+      'cvid',
+    ]
+  ];
+
+  $schema['inscripciones_files'] = [
+    'description' => 'Stores module data files.',
+    'fields' => [
+      'cvfid' => [
+        'description' => 'The primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'cvid' => [
+        'description' => 'The inscripciones id field.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'fid' => [
+        'description' => 'The {file}.fid field.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'created' => [
+        'description' => 'The timestamp for when registry was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'cvfid',
+    ]
+  ];
+
+  return $schema;
+}
