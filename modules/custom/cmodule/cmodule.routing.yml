@@ -31,9 +31,11 @@ cmodule.admin_detail:
     _permission: 'access content'
 
 cmodule.user_inscripcion:
-  path: '/user/{uid}/inscripciones'
+  path: '/user/{user}/inscripciones'
   defaults:
     _controller: '\Drupal\cmodule\Controller\UserInscripcionController::content'
     _title: 'Inscripciones del usuario'
   requirements:
     _permission: 'access content'
+  options:
+    user: \d+

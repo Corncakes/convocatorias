@@ -16,7 +16,7 @@ class UserInscripcionController extends ControllerBase {
    * @return array
    *   Return markup array.
    */
-  public function content($uid) {
+  public function content($user) {
     $header = [
         ['data' => 'id'],
         ['data' => 'Convocatoria'],
@@ -32,7 +32,7 @@ class UserInscripcionController extends ControllerBase {
       
       $query
         ->condition('nfd.type', 'convocatoria')
-        ->condition('i.uid', $uid, '=')
+        ->condition('i.uid', $user, '=')
         ->fields('i', array('cvid'))
         ->fields('nfd', array('title'))
         ->fields('i', array('created'));

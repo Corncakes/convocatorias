@@ -1,0 +1,4 @@
+cmodule.user_inscripcion_task:
+  route_name: cmodule.user_inscripcion
+  base_route: entity.user.canonical
+  title: 'Mis inscripciones'

@@ -10,6 +10,14 @@
    */
   Drupal.behaviors.exampleBehavior = {
     attach: function (context, settings) {
+      $(".home-slider").owlCarousel({
+        loop: true,
+        dots: true,
+        nav: false,
+        items: 1,
+        margin: 0,
+        autoplay: true,
+      });
       $(".home-noticias").owlCarousel({
         loop: false,
         dots: false,
@@ -25,11 +33,11 @@
           },
           600:{
             items:3,
-            margin: 10,
+            margin: 30,
           },
           1000:{
             items:4,
-            margin: 10,
+            margin: 30,
           }
         }
       });
@@ -48,11 +56,11 @@
           },
           600:{
             items:3,
-            margin: 10,
+            margin: 30,
           },
           1000:{
             items:3,
-            margin: 10,
+            margin: 30,
           }
         }
       });
@@ -71,11 +79,11 @@
           },
           600:{
             items:4,
-            margin: 10,
+            margin: 30,
           },
           1000:{
             items:4,
-            margin: 10,
+            margin: 30,
           }
         }
       });
@@ -94,11 +102,11 @@
           },
           600:{
             items:3,
-            margin: 10,
+            margin: 30,
           },
           1000:{
             items:3,
-            margin: 10,
+            margin: 30,
           }
         }
       });

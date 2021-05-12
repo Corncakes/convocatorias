@@ -1,0 +1,3 @@
+adjuntar permission:
+  title: 'Adjuntar documentos'
+  description: 'Roles que tengan este permiso pueden adjuntar documentos.'

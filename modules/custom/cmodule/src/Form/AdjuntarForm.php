@@ -5,6 +5,7 @@ namespace Drupal\cmodule\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Implements a form.
@@ -24,31 +25,37 @@ class AdjuntarForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $nid = \Drupal::request()->query->get('node');
     $node = \Drupal\node\Entity\Node::load($nid);
-
-    $paraAdjuntar = $node->get('field_archivos_para_adjuntar')->getValue(); 
     
-    $form['inscripciones_files']['#tree'] = TRUE;
-    
-    foreach ($paraAdjuntar as  $value) {
-      $labelName = strtolower($value['value']);
-      $labelName = str_replace(' ', '-', $labelName);
-      $labelName = preg_replace('/[^A-Za-z0-9\-]/', '', $labelName);
-      $labelName = preg_replace('/-+/', '-', $labelName);
+    if (\Drupal::currentUser()->hasPermission('adjuntar permission')) {
+      $paraAdjuntar = $node->get('field_archivos_para_adjuntar')->getValue(); 
       
-      $form['inscripciones_files'][$labelName] = [
-        '#type' => 'managed_file',
-        '#title' => $this->t($value['value']),
-        '#upload_location' => 'public://docs-convocatoria',
-        '#upload_validators' => [
-          'file_validate_extensions' => ['pdf'],
-        ],
+      $form['inscripciones_files']['#tree'] = TRUE;
+      
+      foreach ($paraAdjuntar as  $value) {
+        $labelName = strtolower($value['value']);
+        $labelName = str_replace(' ', '-', $labelName);
+        $labelName = preg_replace('/[^A-Za-z0-9\-]/', '', $labelName);
+        $labelName = preg_replace('/-+/', '-', $labelName);
+        
+        $form['inscripciones_files'][$labelName] = [
+          '#type' => 'managed_file',
+          '#title' => $this->t($value['value']),
+          '#upload_location' => 'public://docs-convocatoria',
+          '#upload_validators' => [
+            'file_validate_extensions' => ['pdf'],
+          ],
+        ];
+      }
+      $form['actions'] = [
+        '#type' => 'submit',
+        '#value' => $this->t('Enviar'),
       ];
+      return $form;
+    } else {
+      $response = new RedirectResponse("/user/login?destination=/node/".$nid);
+      $response->send();
+      return;
     }
-    $form['actions'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Enviar'),
-    ];
-    return $form;
   }
 
   /**
