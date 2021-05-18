@@ -17,16 +17,17 @@
         items: 1,
         margin: 0,
         autoplay: true,
+        autoHeight:true,
       });
       $(".home-noticias").owlCarousel({
         loop: false,
-        dots: false,
+        dots: true,
         nav: false,
         autoplay: false,
         responsive:{
           0:{
             loop: false,
-            items:2,
+            items:1,
             stagePadding: 50,
             autoplay: false,
             margin: 10,
@@ -49,7 +50,7 @@
         responsive:{
           0:{
             loop: false,
-            items:2,
+            items:1,
             stagePadding: 50,
             autoplay: false,
             margin: 10,
@@ -72,7 +73,7 @@
         responsive:{
           0:{
             loop: false,
-            items:2,
+            items:1,
             stagePadding: 50,
             autoplay: false,
             margin: 10,
@@ -95,7 +96,7 @@
         responsive:{
           0:{
             loop: false,
-            items:2,
+            items:1,
             stagePadding: 50,
             autoplay: false,
             margin: 10,

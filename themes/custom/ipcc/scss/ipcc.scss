@@ -281,7 +281,7 @@ $dark-blue: #092e4e;
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   margin: 0 0 2rem;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 h2 {
@@ -1002,6 +1002,136 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
     .webform-element-description {
       font-size: 0.7rem;
       font-family: 'Noto Sans TC', sans-serif;
+    }
+  }
+}
+
+#right-off-canvas-menu {
+  background: #084d88 url('../images/bg-ipcc-02.jpg') center center no-repeat;
+  background-size: cover;
+
+  .off-canvas-list {
+    list-style: none;
+    margin: 0;
+    text-align: left;
+    padding-left: 2.3rem;
+
+    li {
+      margin-bottom: 0.8rem;
+
+      a {
+        color: #fff;
+        font-size: 1.3rem;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 700;  
+      }
+    }
+  }
+}
+
+.header-mobile {
+  padding: 1.5rem;
+
+  #block-sitebranding {
+    a {
+      outline: none;
+
+      img {
+        width: 90px;
+      }
+    }
+  }
+
+  .offcanvas-close {
+    line-height: 0.8;
+    outline: none;
+
+    span {
+      font-size: 2.8rem;
+        color: #ffffff;
+        font-weight: 600;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  & > div:first-child {
+    flex: 2;
+  }
+}
+
+.hamburguer-icon {
+  font-size: 1.6rem;
+  padding-right: 0.5rem;
+  color: #e53e3a !important;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  #block-ipcc-branding {
+    width: 80%;
+  }
+
+  h2.block-title {
+    font-size: 2.2rem;
+    padding: 0 1rem;
+  }
+
+  .footer-container {
+    footer {
+      flex-direction: column;
+
+      #footer-last {
+        text-align: center;
+      }
+    }
+  }
+
+  #block-logofooter {
+    border-top: 1px solid #ffffff2b;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  #block-views-block-custom-blocks-block-8 {
+    .info {
+      padding: 0 1rem 2rem 1rem;
+    }
+  }
+
+  .home-slider {
+    .text-container {
+      position: relative;
+      width: initial;
+      padding: 1rem;
+      text-align: center;
+
+      .texto {
+        font-size: 1.6rem;
+        color: #333;
+        letter-spacing: 0;
+        margin-bottom: 1rem;
+      }
+
+      .enlace {
+        justify-content: center;
+      }
+    }
+
+    .views-field-field-imagen {
+      .field-content {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .owl-dots {
+      margin-top: 10px;
+      position: relative;
     }
   }
 }
