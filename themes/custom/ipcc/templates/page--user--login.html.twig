@@ -150,23 +150,26 @@
         {% endif %}
 
         <div class="row expanded collapse user-pages-img-container">
-          <div class="columns large-6">
-            <div class="user-pages-img">
-              <div class="links-login">
-                <h3>¿No tienes una cuenta?</h3>
-                <h4>Puedes crear una</h4>
-                <a class="button success" href="/register/convocatoria">Registrarse</a>
-              </div>
-            </div>
-          </div>
           <main id="main" class="columns large-6 columns" role="main">
             <a id="main-content"></a>
             {% if breadcrumb %} {{ breadcrumb }} {% endif %}
             <section>
-              <h3>Ingresar</h3>
+              <h3>Acceder</h3>
               {{ page.content }}
             </section>
           </main>
+          <div class="columns large-6">
+            <div class="user-pages-img">
+              <div class="links-login">
+                <h3>¿No tienes una cuenta?</h3>
+                <h4>Puedes crear una aquí</h4>
+                <br>
+                <a class="button success" href="/registro/persona-natural">Registrarse cómo Persona natural</a>
+                <br>
+                <a class="button success" href="/registro/persona-juridica">Registrarse cómo Persona jurídica</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {% if page.footer_first or page.footer_middle or page.footer_last %}
