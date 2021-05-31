@@ -230,6 +230,14 @@ $dark-blue: #092e4e;
     }
 }
 
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mt-10 {
+  margin-top: 10rem;
+}
+
 .my-3 {
 	margin-top: 3rem;
     margin-bottom: 3rem;
@@ -288,7 +296,6 @@ h2 {
   color: #383c40;
 }
 
-/*
 .callout {
   position: fixed;
   bottom: 15px;
@@ -300,7 +307,7 @@ h2 {
   color: $white;
   border-radius: 10px;
 }
-*/
+
 .clearfix {
     clear: both;
     overflow: hidden;
@@ -348,8 +355,36 @@ h2 {
 }
 
 .views-label {
-    font-size: 1rem;
-    font-weight: bold;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: block;
+}
+
+#block-views-block-custom-blocks-block-2 {
+  .views-field {
+    margin-bottom: 0.5rem;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+
+    .field-content {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+#block-views-block-custom-blocks-block-3 {
+  .documento {
+    .file {
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
 
 h2 {
@@ -382,7 +417,7 @@ h2 {
   }
 }
 
-.button.success {
+.button.success, [type='submit'].js-form-submit, [type='button'].js-form-submit {
   background: #2da1ce;
   border-radius: 30px;
   color: #ffffff;
@@ -398,7 +433,38 @@ h2 {
 
   &:hover {
     background: #1e3358;
-    border: 1px solid #09395e;
+    //border: 1px solid #09395e;
+    color: #ffffff;
+  }
+}
+
+.webform-submission-table th {
+  text-align: left;
+}
+
+.webform-submission-information {
+  margin-bottom: 2rem;
+}
+
+.webform-submission-data {
+  .webform-element {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    a {
+      color: #1779ba;
+    }
+  }
+}
+
+.webform-submission-table {
+  a {
+    color: #1779ba;
   }
 }
 
@@ -440,12 +506,24 @@ h2 {
 }
 
 .main-title-container {
-  background: url('../images/bg-ipcc-02.jpg') center center repeat-x;
+  background: url('../images/bg-ipcc-02.jpg') center center repeat;
   background-size: contain;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   margin-bottom: 3rem;
-  border-top: 10px solid #ff921b;
-
+  border-top: 5px solid #ff921b;
+  position: relative;
+/*
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #bd580261;
+    width: 100%;
+    height: -webkit-fill-available;
+  }
+*/
   h1 {
     color: #ffffff;
     text-transform: uppercase;
@@ -472,6 +550,46 @@ h2 {
 .section-registro, .section-user {
   .main-title-container {
     margin-bottom: 0;
+    background: #171717d1 !important;
+    background-size: contain;
+    padding: 1.5rem 0;
+    margin-bottom: 3rem;
+    border-top: 5px solid #ff921b;
+    position: relative;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  &.user-logged-in {
+    .main-title-container {
+      margin-bottom: 0;
+      background: #171717d1 !important;
+      position: relative;
+      text-align: center;
+      position: relative;
+    }
+
+    #block-ipcc-local-tasks {
+      position: relative;
+      background: none;
+      border-radius: 0;
+      bottom: 0;
+      padding: 0;
+      right: 0;
+      margin: 2rem 0;
+      z-index: 0;
+
+      a {
+        padding: 1rem 2rem;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -540,20 +658,26 @@ h2 {
 }
 
 .user-pages-img-container {
-  display: flex;
+  //display: flex;
+  background: url('../images/bgusers.jpg') center bottom no-repeat;
+  background-size: cover;
+
+  .password_link {
+    text-align: center;
+  }
 
   #block-ipcc-local-tasks {
     display: none;
   }
 
   .user-pages-img {
-    background: url('../images/bg-ipcc-02.jpg') center center repeat-y;
-    height: 100%;
-    background-size: contain;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 6rem;
+    //background: url('../images/bg-ipcc-02.jpg') center center repeat-y;
+    //height: 100%;
+    //background-size: contain;
+    //display: flex;
+    //align-items: flex-start;
+    //justify-content: center;
+    padding-top: 2rem;
   }
 
   .links-login {
@@ -577,12 +701,15 @@ h2 {
 
   #main {
     background: #e9e9e9;
-    padding: 10rem 8rem;
+    padding: 6rem 8rem;
+    border-radius: 15px;
+    box-shadow: 0px 1px 5px 0 #00000024;
 
-    h3, h4 {
+    h3 {
       font-family: 'Noto Sans TC', sans-serif;
       color: #333333;
       font-weight: 600;
+      text-align: center;
     }
 
     #block-pagetitle {
@@ -614,11 +741,12 @@ h2 {
       display: none;
     }
 
-    .password-confirm, label {
+    .password-confirm, label, h4 {
       font-family: 'Noto Sans TC', sans-serif;
       font-size: 0.8rem;
       color: #555555;
       font-weight: 300;
+      margin-bottom: 0.2rem;
     }
 
     .password-confirm {
@@ -648,6 +776,10 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
   #block-dayscript-local-tasks {
     display: none;
   }
+}
+
+.ui-dialog .button, .ui-dialog .button:not(:focus), .ui-dialog .form-actions .button, .ui-dialog .action-link--icon-trash.action-link {
+  border: none !important;
 }
 
 #block-ipcc-content {
@@ -694,6 +826,10 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
         font-size: 0.7rem;
         font-weight: 700;
         color: #fff;
+
+        &.Cerrado {
+          background: #b72431b3 !important;
+        }
       }
 
       .views-field-field-categoria {
@@ -1075,10 +1211,52 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
   color: #e53e3a !important;
 }
 
+.views-exposed-form {
+  legend {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+
+    .fieldset-legend {
+      font-weight: bold;
+    }
+  }
+
+  .js-form-type-select {
+    margin-bottom: 1rem;
+
+    label {
+      width: 100%;
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    margin: 0 0 2rem;
+  }
+
+  [type='file'], [type='checkbox'], [type='radio'] {
+    margin: 0 0 0.4rem;
+  }
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   #block-ipcc-branding {
     width: 80%;
+  }
+
+  .user-pages-img-container #main {
+    padding: 1rem 2rem;
+  }
+
+  .main-title-container h1 {
+    font-size: 1.5rem;
   }
 
   h2.block-title {

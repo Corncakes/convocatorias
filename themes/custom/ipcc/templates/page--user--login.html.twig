@@ -150,26 +150,29 @@
         {% endif %}
 
         <div class="row expanded collapse user-pages-img-container">
-          <main id="main" class="columns large-6 columns" role="main">
+          <main id="main" class="columns large-6 large-offset-3 columns mt-10 mb-3" role="main">
             <a id="main-content"></a>
             {% if breadcrumb %} {{ breadcrumb }} {% endif %}
             <section>
               <h3>Acceder</h3>
               {{ page.content }}
             </section>
-          </main>
-          <div class="columns large-6">
+
+            <div class="password_link">
+              <a href="{{ path('user.pass') }}">{{ 'Forgot your password?'|t }}</a>
+            </div>
+
             <div class="user-pages-img">
               <div class="links-login">
                 <h3>¿No tienes una cuenta?</h3>
-                <h4>Puedes crear una aquí</h4>
+                <h3>Puedes crear una aquí</h3>
                 <br>
                 <a class="button success" href="/registro/persona-natural">Registrarse cómo Persona natural</a>
                 <br>
                 <a class="button success" href="/registro/persona-juridica">Registrarse cómo Persona jurídica</a>
               </div>
             </div>
-          </div>
+          </main>
         </div>
 
         {% if page.footer_first or page.footer_middle or page.footer_last %}

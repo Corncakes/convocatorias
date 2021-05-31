@@ -150,7 +150,7 @@
         {% endif %}
 
         <div class="row expanded collapse user-pages-img-container">
-          <main id="main" class="columns large-6 columns" role="main">
+          <main id="main" class="columns large-6 columns large-offset-3 columns mt-10 mb-3" role="main">
             <a id="main-content"></a>
             {% if breadcrumb %} {{ breadcrumb }} {% endif %}
             <section>
@@ -159,16 +159,18 @@
               <h3>Datos de acceso</h3>
               {{ page.content }}
             </section>
-          </main>
-          <div class="columns large-6">
+
             <div class="user-pages-img">
               <div class="links-login">
-                <h4>¿Ya tienes una cuenta?</h4>
+                <h3>¿Ya tienes una cuenta?</h3>
                 <br>
                 <a class="button success" href="/user/login">Ingresar</a>
+                <div class="password_link">
+                  <a href="{{ path('user.pass') }}">{{ 'Forgot your password?'|t }}</a>
+                </div>
               </div>
             </div>
-          </div>
+          </main>
         </div>
 
         {% if page.footer_first or page.footer_middle or page.footer_last %}
